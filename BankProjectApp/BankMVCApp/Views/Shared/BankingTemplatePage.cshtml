@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Do Transaction", "index", "InternetBanking")</li>
+                <li>@Html.ActionLink("View Passbook", "ViewPassbook", "InternetBanking")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                @if (Session["Name"] != null)
+                {
+                    <li><h3>@Session["Name"]</h3></li>
+                    <li>@Html.ActionLink("Log out","logout","", new { @class = "btn btn-danger" })</li>
+                }
+                @if (Session["Name"] == null)
+                {
+                    <li>@Html.ActionLink("Login", "index", "Home", "", new { @class = "btn btn-primary", @style = "color:#fff;" })</li>
+                }
+            </ul>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

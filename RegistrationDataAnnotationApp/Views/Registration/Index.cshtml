@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model RegistrationDataAnnotationApp.Models.ViewModels.RegistrationViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("index", "Registration", FormMethod.Post))
+        {
+            @Html.Label("UserName: ");
+            @Html.TextBoxFor(m => m.Name);<br /><br />
+            @Html.Label("Email: ");
+            @Html.TextBoxFor(m => m.Email);<br /><br />
+            @Html.Label("Age");
+            @Html.TextBoxFor(m => m.Age);<br /><br />
+            @Html.Label("Salary");
+            @Html.TextBoxFor(m => m.Salary);<br /><br />
+            <input type="submit" />
+        }
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    </div>
+</body>
+</html>

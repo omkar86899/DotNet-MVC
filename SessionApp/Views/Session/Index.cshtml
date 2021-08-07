@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Old Value: @ViewBag.oldValue<br />
+        New Value: @Session["count"]<br />
+        Session Id: @Session.SessionID
+    </div>
+    @Html.ActionLink("Click here to view Summary", "Index", "Summary")
+</body>
+</html>

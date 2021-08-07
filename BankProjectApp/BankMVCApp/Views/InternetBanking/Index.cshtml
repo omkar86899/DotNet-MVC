@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/BankingTemplatePage.cshtml";
+}
+@model BankMVCApp.Models.ViewModels.DoTransactionViewModel
+
+<style>
+    .rectangle{
+        width: max-content;
+        border: solid;
+        border-width: 5px;
+        border-color: aqua;
+        margin:auto;
+        padding: 20px;
+    }
+</style>
+<article class="rectangle">
+    <h1 class="panel-heading">Transaction</h1>
+    @using (Html.BeginForm("index", "InternetBanking", FormMethod.Post))
+    {
+        @Html.Label("Amount: ")
+        @Html.TextBoxFor(m => m.Amount, new { @type = "number" })
+        @Html.ValidationMessageFor(m => m.Amount)
+        <br /><br />
+        @Html.RadioButtonFor(m => m.TransactionType, 'D', new { @id = "deposit" })
+        @Html.Label("Deposit", new { @for = "deposit" })
+        <label>   </label>
+        @Html.RadioButtonFor(m => m.TransactionType, 'W', new { @id = "withdraw" })
+        @Html.Label("Withdraw", new { @for = "withdraw" })
+        <br /><br />
+        <input type="submit" value="Save" class="btn btn-success" />
+        <button class="btn btn-danger">Clear</button>
+        <br /><br />
+        if (!String.IsNullOrEmpty(Model.TransactionSuccessfulMessage))
+        {
+            <label class="alert alert-success">@Model.TransactionSuccessfulMessage</label>
+        }
+        if (!String.IsNullOrEmpty(Model.Error))
+        {
+            <label class="alert alert-danger">@Model.Error</label>
+        }
+    }
+</article>

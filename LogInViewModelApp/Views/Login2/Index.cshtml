@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+@model LogInViewModelApp.Models.LoginViewModel
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <p style="color:red">@Model.ErrorMsg</p>
+        @using (Html.BeginForm("index", "login2", FormMethod.Post))
+        {
+            <p>
+                UserName: @Html.TextBoxFor(m => m.UserName)
+                Password: @Html.PasswordFor(m => m.UserPassword)
+                <input type="submit" />
+            </p>
+        }
+    </div>
+</body>
+</html>

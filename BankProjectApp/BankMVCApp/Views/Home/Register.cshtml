@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+@model BankMVCApp.Models.ViewModels.RegistrationViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Register", "home", FormMethod.Post))
+        {
+            @Html.Label("Name: ")
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            <br /><br />
+            @Html.Label("Balance: ")
+            @Html.TextBoxFor(m => m.Balance)
+            @Html.ValidationMessageFor(m => m.Balance, "", new { @class = "text-danger" })
+            <br /><br />
+            @Html.Label("Password: ")
+            @Html.TextBoxFor(m => m.Password, new { @type = "password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            <br /><br />
+            @Html.Label("Confirm Password: ")
+            @Html.TextBoxFor(m => m.ConfirmPassword, new { @type = "password" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+            @Html.Label(Model.PasswordNotMatchedError, new { @class = "text-danger" })
+            <br /><br />
+            <input class="btn btn-success" type="submit" />
+            @Html.ActionLink("Login","index","", new { @class = "btn btn-primary" })
+        }
+        <label class="text-danger">@Model.Error</label>
+    </div>
+</body>
+</html>

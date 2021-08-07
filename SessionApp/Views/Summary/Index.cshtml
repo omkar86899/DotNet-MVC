@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Last value of Session Counter is: @Session["count"]</h1>
+        <h1>Last value of Application Counter is: @HttpContext.Current.Application["count"]</h1>
+    </div>
+</body>
+</html>

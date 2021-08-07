@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ViewPassbook";
+    Layout = "~/Views/Shared/BankingTemplatePage.cshtml";
+}
+@using BankProjectAppLib.Data
+@model BankMVCApp.Models.ViewModels.ViewPassbookViewModel
+
+<article>
+    <h2>ViewPassbook</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Transaction transaction in Model.Transactions)
+            {
+                <tr>
+                    <td>@transaction.Amount</td>
+                    <td>@transaction.Type.ToString()</td>
+                    <td>@transaction.DateTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("Export", "Export", "", new { @class = "btn btn-primary" });
+</article>
+

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQueryableIEnumerableApp", "IQueryableIEnumerableApp.csproj", "{DFFF3B0B-6060-472E-8B9F-A0EEE3E3E5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFFF3B0B-6060-472E-8B9F-A0EEE3E3E5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFFF3B0B-6060-472E-8B9F-A0EEE3E3E5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFFF3B0B-6060-472E-8B9F-A0EEE3E3E5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFFF3B0B-6060-472E-8B9F-A0EEE3E3E5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D751E89-A4DA-4206-89C8-A462B780F72C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/TemplatePage.cshtml";
+}
+
+@model StudentMVCApp.Models.ViewModels.AddViewModel
+
+<article class="rectangle" ">
+    <h1>Registration Form</h1>
+    <br />
+    @using (Html.BeginForm("Add", "Student", FormMethod.Post))
+    {
+        @Html.Label("Roll Number: ")
+        @Html.TextBoxFor(m => m.RollNo, new { @type = "number" })
+        @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "text-danger" })
+        <br /><br />
+        @Html.Label("Name: ")
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+        <br /><br />
+        @Html.Label("CGPA: ")
+        @Html.TextBoxFor(m => m.Cgpa)
+        @Html.ValidationMessageFor(m => m.Cgpa, "", new { @class = "text-danger" })
+        <br /><br />
+        <input class="btn btn-success" type="submit" />
+    }
+    <label class="text-danger">@Model.Error</label>
+</article>
+
